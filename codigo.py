@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-tb_vendas=pd.read_csv("Aula4/vendas.csv")
+tb_vendas=pd.read_csv("vendas.csv")
 
 st.title("Sistema de Vendas")
 
@@ -21,7 +21,7 @@ if btn_cadastrar:
     else:
         lst_nova_venda=[str(str_dt), str(str_sel), str(str_prod), str(str_qtd), float(str_val)]
         tb_vendas.loc[len(tb_vendas)]=lst_nova_venda
-        tb_vendas.to_csv("Aula4/vendas.csv", index=False)
+        tb_vendas.to_csv("vendas.csv", index=False)
         st.success("Venda cadastrada com sucesso!")
 
 st.write("## Vendas Cadastradas")
